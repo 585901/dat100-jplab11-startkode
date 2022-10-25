@@ -4,67 +4,107 @@ import no.hvl.dat100.jplab11.common.TODO;
 
 public abstract class Innlegg {
 	
-	// TODO - deklarering av objektvariable
+// A) Gjør ferdig implementasjon av den abstrakte klassen Innlegg.java med 
+//	objektvariable id (heltall), bruker (tekststreng), dato (tekststreng), 
+//	og antall likes (heltall). De fire objektvariable skal ikke være synlige 
+//	utenfor klassen. Objektvariablen id skal brukes om en unik identifikasjon 
+//	på et innlegg.
+	
+	private int id; 
+	private String bruker; 
+	private String dato; 
+	private int likes; 
 	
 	public Innlegg() {
 		
+		this(0, "standardbruker", "25.10.22", 0); 
+		
 	}
+	
+// B) Klassen skal ha to konstruktører: public Innlegg(int id, String bruker, String dato) 
+//	public Innlegg(int id, String bruker, String dato, int likes)som gir verdi til 
+//	objektvariablene. Konstruktøren som bare tar tre parametre skal sette likes lik 0.
 	
 	public Innlegg(int id, String bruker, String dato) {
 
-		// TODO 
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		this(id, bruker, dato, 0); 
+		
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
 
-		// TODO - START
+		this.id = id; 
+		this.bruker = bruker; 
+		this.dato = dato; 
+		this.likes = likes; 
 		
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
 	}
+	
+// C) Klassen skal ha get- og set- metoder for de tre objektvariable id, bruker og dato.
 	
 	public String getBruker() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return bruker; 
 
 	}
 
 	public void setBruker(String bruker) {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		this.bruker = bruker; 
+	
 	}
 
 	public String getDato() {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		return dato;  
 		
 	}
 
 	public void setDato(String dato) {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		this.dato = dato; 
+		
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		return id; 
 
 	}
 
 	public int getLikes() {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		return likes; 
 
 	}
+	
+// D) Implementer metoden void doLike() som øker antall likes for innlegget med 1.
 	
 	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		likes += 1;
+		
 	}
 	
+// F) Implementer metoden public boolean erLik(Innlegg innlegg) som returnerer true hvis 
+//	og kun hvis innlegget har samme id som innlegget innlegg git med som parameter.
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		if(innlegg.getId() == id) {
+			return true; 
+		} else {
+			return false; 
+		}
 
 	}
 	
+// E) Implementer metoden public String toString() som returnerer en tekststreng representasjon 
+//	på formen:"1\nOle Olsen\n23-10\n7\n"der det først tallet er id for innlegget og 7 er 
+//	antall likes for eksemplet.
+
 	@Override
 	public String toString() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n"; 
 				
 	}
 	
